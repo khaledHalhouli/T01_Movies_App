@@ -1,6 +1,10 @@
 import axios from "axios"
 import React,{useEffect,useState} from "react"
 import {Card,Button} from "react-bootstrap"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./style.css"
+import { Link } from "react-router-dom";
+
 const MainPage =()=>{
 const [movies, setMovies] = useState([])
     useEffect(()=>{
@@ -12,17 +16,14 @@ axios.get("https://api.themoviedb.org/3/movie/popular?api_key=eb9e888f1f8bec1158
 })
     },[])
 
-    return <div>
+    return <div className="mainPage">
         {movies&&movies.map((element)=>{
-            <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+           return <Card style={{ width: '18rem' }}>
+            <Link to={`/${element.id}`}><Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500${element.backdrop_path}`} /></Link>
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-              </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <Card.Title>{element.original_title}</Card.Title>
+              
+              <Button variant="primary">Favorit</Button>
             </Card.Body>
           </Card>
         })}

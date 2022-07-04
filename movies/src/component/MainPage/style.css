@@ -1,0 +1,8 @@
+.mainPage{
+    display: flex;
+    flex-wrap: wrap;
+   padding: 30px;
+   gap: 20px;
+   justify-content: center;
+   align-items: center;
+}
