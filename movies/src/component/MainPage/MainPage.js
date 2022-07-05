@@ -15,7 +15,7 @@ axios.get("https://api.themoviedb.org/3/movie/popular?api_key=eb9e888f1f8bec1158
     console.log(err);
 })
     },[])
-
+    
     return <div className="mainPage">
         {movies&&movies.map((element)=>{
            return <Card style={{ width: '18rem' }}>
