@@ -2,12 +2,14 @@ import axios from "axios";
 import { React, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./style.css";
-import { AiFillHeart } from "react-icons/ai";
 
+import {Modal,Button} from 'react-bootstrap';
+import PopUp from "../PopUp/PopUP";
 const MovePage = () => {
   const [move, setMove] = useState("");
-  const [favIcon, setfavIcon] = useState("iconFavNo");
+ 
   const { id } = useParams();
+
 
   useEffect(() => {
     axios
@@ -23,43 +25,8 @@ const MovePage = () => {
         console.log(err);
       });
   }, [id]);
-  useEffect(() => {
-    if (
-      localStorage.getItem("favorite") &&
-      JSON.parse(localStorage.getItem("favorite")).includes(move.id)
-    ) {
-      setfavIcon("iconFavYes");
-    }
-    console.log(2);
-  }, [move]);
-  const favoriteButton = () => {
-    if (
-      !localStorage.getItem("favorite") ||
-      !JSON.parse(localStorage.getItem("favorite")).includes(move.id)
-    ) {
-      console.log(
-        !JSON.parse(localStorage.getItem("favorite")).includes(move.id)
-      );
-      let moveFavArr = localStorage.getItem("favorite")
-        ? JSON.parse(localStorage.getItem("favorite"))
-        : [];
-      localStorage.setItem(
-        "favorite",
-        JSON.stringify([...moveFavArr, move.id])
-      );
-      setfavIcon("iconFavYes");
-    } else {
-      let moveFavArr = JSON.parse(localStorage.getItem("favorite")).filter(
-        (element) => {
-          return element !== move.id;
-        }
-      );
-      localStorage.setItem("favorite", JSON.stringify(moveFavArr));
-
-      setfavIcon("iconFavNo");
-    }
-  };
-
+  
+  
   return (
     <div className="movePage">
       {move && (
@@ -96,9 +63,7 @@ const MovePage = () => {
                 })}
               </div>
             </div>
-          <p className={`${favIcon}`} onClick={favoriteButton}>
-            <AiFillHeart />
-          </p>
+          <PopUp moveId={move.id} moveName={move.original_title}/>
           </div>{" "}
         </div>
       )}
