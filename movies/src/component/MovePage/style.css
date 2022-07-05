@@ -1,6 +1,6 @@
 .move{
     display: grid;
-    grid-template-columns: 80% auto;
+    grid-template-columns: 100%;
     padding: 2rem;
 width: 100%;
 min-height: 500px;
@@ -8,7 +8,8 @@ background-size: 100%;
 }
 .moveCard{
     display: grid;
-    grid-template-columns: 40%  auto;
+    grid-template-columns: 40%  auto 10%;
+    background-color: rgba(0, 0, 0, 0.801);
    
 
     
@@ -22,8 +23,7 @@ background-size: 100%;
     grid-template-rows: 35% auto 20%;
     grid-template-columns: auto 30%;
     grid-template-areas: "tit rt" "ov ov" "gn tim";
-    background-color: black;
-    opacity: 80%;
+    
 }
 .moveTitle{
     grid-area: tit;
@@ -65,4 +65,22 @@ background-size: 100%;
 }
 .genrsName{
 
+}
+.iconFavNo{
+    font-size: 3.5rem;
+    color: white;
+    height: 4rem;
+}
+.iconFavNo:hover{
+    cursor: pointer;
+}
+.iconFavYes{
+    font-size: 3.5rem;
+    color: rgb(187, 9, 9);
+    
+    
+    height: 4rem;
+}
+.iconFavYes:hover{
+    cursor: pointer;
 }
