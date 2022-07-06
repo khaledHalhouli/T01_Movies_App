@@ -1,0 +1,17 @@
+.favPageBody{
+    display: flex;
+    flex-wrap: wrap;
+   padding: 30px;
+   gap: 20px;
+   justify-content: center;
+   align-items: center;
+}
+.btn-close{
+    align-self: end;
+    color: white;
+    
+}
+.cardFavs{
+    /* background-color: rgb(17, 17, 17); */
+
+}
