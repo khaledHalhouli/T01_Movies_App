@@ -63,7 +63,7 @@ const MovePage = () => {
                 })}
               </div>
             </div>
-          <PopUp moveId={move.id} moveName={move.original_title}/>
+          <PopUp move={{id:move.id,poster_path:move.poster_path}} moveName={move.original_title}/>
           </div>{" "}
         </div>
       )}

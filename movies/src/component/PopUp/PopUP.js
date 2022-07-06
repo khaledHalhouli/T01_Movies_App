@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { AiFillHeart } from "react-icons/ai";
-function PopUp({ moveId,moveName }) {
+function PopUp({ move,moveName }) {
   const [show, setShow] = useState(false);
   const [favIcon, setfavIcon] = useState("iconFavNo");
   const handleClose = () => setShow(false);
@@ -10,9 +10,12 @@ function PopUp({ moveId,moveName }) {
   const [massage, setMassage] = useState("");
 
   useEffect(() => {
+    let favoriteMoviesId=JSON.parse(localStorage.getItem("favorite")).map((element)=>{ return move.id})
+    console.log(localStorage.getItem("favorite") &&
+    favoriteMoviesId.includes(move.id));
     if (
       localStorage.getItem("favorite") &&
-      JSON.parse(localStorage.getItem("favorite")).includes(moveId)
+      favoriteMoviesId.includes(move.id)
     ) {
       setfavIcon("iconFavYes");
 setMassage(`Remove ${moveName} from favorite list`)
@@ -24,20 +27,21 @@ setMassage(`Remove ${moveName} from favorite list`)
   }, []);
 
   const favoriteButton = () => {
+    let favoriteMoviesId=JSON.parse(localStorage.getItem("favorite")).map((element)=>{ return move.id})
     if (
       !localStorage.getItem("favorite") ||
-      !JSON.parse(localStorage.getItem("favorite")).includes(moveId)
+      !favoriteMoviesId.includes(move.id)
     ) {
       let moveFavArr = localStorage.getItem("favorite")
-        ? JSON.parse(localStorage.getItem("favorite"))
+        ? favoriteMoviesId
         : [];
-      localStorage.setItem("favorite", JSON.stringify([...moveFavArr, moveId]));
+      localStorage.setItem("favorite", JSON.stringify([...moveFavArr, move]));
       setfavIcon("iconFavYes");
       setMassage(`Remove ${moveName} from favorite list`)
     } else {
       let moveFavArr = JSON.parse(localStorage.getItem("favorite")).filter(
         (element) => {
-          return element !== moveId;
+          return element.id !== move.id;
         }
       );
       localStorage.setItem("favorite", JSON.stringify(moveFavArr));

@@ -1,8 +1,19 @@
-.mainPage{
+.mainPageBody{
     display: flex;
     flex-wrap: wrap;
    padding: 30px;
    gap: 20px;
    justify-content: center;
+   align-items: center;
+}
+.cardFav{
+    background-color: rgb(17, 17, 17);
+    height: 5rem;
+    padding: 0rem 1rem;
+}
+.mainPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
    align-items: center;
 }
