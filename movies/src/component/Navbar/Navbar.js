@@ -21,6 +21,7 @@ const Navbars = ({ setSearch }) => {
       .then((result) => {
         console.log(result.data.results);
         setSearch(result.data.results)
+        localStorage.setItem("search",JSON.stringify(result.data.results))
       })
       .catch((err) => {
         console.log(err);

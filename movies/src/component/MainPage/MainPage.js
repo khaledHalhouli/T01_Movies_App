@@ -31,9 +31,9 @@ const MainPage = () => {
     <div className="mainPage">
       <div className="mainPageBody">
         {movies &&
-          movies.map((element) => {
+          movies.map((element,index) => {
             return (
-              <Card style={{ width: "18rem" }}>
+              <Card style={{ width: "18rem" }} key={index}>
                 <Link to={`/${element.id}`}>
                   <Card.Img
                     variant="top"

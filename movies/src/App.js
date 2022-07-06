@@ -17,7 +17,7 @@ function App() {
 <Route path='/' element={<MainPage/>}/>
 <Route path='/:id' element={<MovePage/>}/>
 <Route path="/favorite" element={<FavoritePage/>}/>
-<Route path='/search' element={<SearchPage/>}/>
+<Route path='/search' element={<SearchPage search={search} setSearch={setSearch}/>}/>
       </Routes>
     </div>
   );
