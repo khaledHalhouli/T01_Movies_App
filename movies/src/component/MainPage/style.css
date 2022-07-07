@@ -17,3 +17,24 @@
     justify-content: center;
    align-items: center;
 }
+.d-block{
+    width:100%
+}
+.topRatedTitle{
+    align-self: self-start;
+margin: 2rem 2rem;
+}
+.w-100{
+    width:100%;
+    height: 50%;
+}
+.slider{
+    width: 80%;
+   
+}
+.imgSlider{
+    height: 20rem;
+}
+.moveTitleSldier{
+    background-color: black;
+}
