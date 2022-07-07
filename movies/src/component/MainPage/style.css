@@ -2,12 +2,13 @@
     display: flex;
     flex-wrap: wrap;
    padding: 30px;
-   gap: 20px;
+   gap: 25px;
    justify-content: center;
    align-items: center;
+   background-color: #141414
 }
 .cardFav{
-    background-color: rgb(17, 17, 17);
+    background-color: rgb(63, 14, 64);
     height: 5rem;
     padding: 0rem 1rem;
 }
@@ -23,6 +24,7 @@
 .topRatedTitle{
     align-self: self-start;
 margin: 2rem 2rem;
+color: white;
 }
 .w-100{
     width:100%;
@@ -30,11 +32,16 @@ margin: 2rem 2rem;
 }
 .slider{
     width: 80%;
-   
+    border: 2px solid white;
+       
 }
 .imgSlider{
     height: 20rem;
 }
 .moveTitleSldier{
     background-color: black;
+}
+.card{
+    box-shadow: -6px 20px 10px rgba(146, 130, 146, 0.774);
+
 }

@@ -18,7 +18,7 @@ function PaginationPage({ pageNum, pagesNumber, setPageNum }) {
     setPageNum(val);
   };
   return (
-    <Pagination>
+    <Pagination size="lg">
       <Pagination.First
         onClick={() => {
           setPageNum(1);
@@ -36,6 +36,7 @@ function PaginationPage({ pageNum, pagesNumber, setPageNum }) {
         arrNum.map((element, index) => {
           return (
             <Pagination.Item
+            key={index}
               active={pageNum == element}
               onClick={(e) => {
                 numClick(element);

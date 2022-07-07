@@ -105,7 +105,7 @@ const MainPage = () => {
         {movies &&
           movies.map((element, index) => {
             return (
-              <Card style={{ width: "18rem" }} key={index}>
+              <Card style={{ width: "18rem" }} key={element.id}>
                 <Link to={`/${element.id}`}>
                   <Card.Img
                     variant="top"

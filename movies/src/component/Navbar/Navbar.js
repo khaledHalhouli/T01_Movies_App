@@ -9,6 +9,7 @@ import {
   Offcanvas,
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./style.css"
 import axios from "axios";
 import { Link } from "react-router-dom";
 const Navbars = ({ setSearch }) => {
@@ -31,9 +32,9 @@ const Navbars = ({ setSearch }) => {
   return (
     <>
       {["lg"].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
+        <Navbar key={expand}  expand={expand} className="mb-3">
           <Container fluid>
-            <Navbar.Brand href="#">PopCorn</Navbar.Brand>
+            <Navbar.Brand href="/" className="navInfoTit">PopCorn</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -47,8 +48,8 @@ const Navbars = ({ setSearch }) => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="/">Home</Nav.Link>
-                  <Nav.Link href="/favorite">Favorite</Nav.Link>
+                  <Nav.Link href="/" className="navInfo">Home</Nav.Link>
+                  <Nav.Link href="/favorite" className="navInfo">Favorite</Nav.Link>
                 </Nav>
                 <Form className="d-flex" onSubmit={searchBut}>
                   <FormControl
@@ -63,7 +64,7 @@ const Navbars = ({ setSearch }) => {
                   <Link to={"/search"}>
 
                   <Button
-                    variant="outline-success"
+                    variant="outline-light"
                     onClick={(e) => {
                       
                       searchBut();
