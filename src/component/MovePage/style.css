@@ -1,9 +1,13 @@
+.movePage{
+min-height: 85vh;
+
+}
 .move{
     display: grid;
     grid-template-columns: 100%;
     padding: 2rem;
 width: 100%;
-min-height: 500px;
+min-height: 85vh;
 background-size: 100%;
 }
 .moveCard{

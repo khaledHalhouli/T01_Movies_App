@@ -11,12 +11,15 @@ const MainPage = () => {
   const [pageNum, setPageNum] = useState();
   const [topRated, setTopRated] = useState(false);
   const [index, setIndex] = useState(0);
-
+const [pagesNumber,setPAgesNumber]=useState(500)
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
   useEffect(() => {
     let numPage=Math.round(Math.random() * 3)
+ 
+   
+
     axios
       .get(
         `https://api.themoviedb.org/3/movie/top_rated?api_key=eb9e888f1f8bec115837636c39456418&language=en-US&page=${numPage}`
@@ -41,6 +44,7 @@ const MainPage = () => {
       .catch((err) => {
         console.log(err);
       });
+      
 
     if (!pageNum) {
       setPageNum(1);
@@ -134,7 +138,7 @@ const MainPage = () => {
           })}
       </div>
       <PaginationPage
-        pagesNumber={20}
+        pagesNumber={pagesNumber}
         setPageNum={setPageNum}
         pageNum={pageNum}
       />
