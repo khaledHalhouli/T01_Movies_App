@@ -30,7 +30,7 @@ const closeBut=(move)=>{
 
 return <div className="favPageBody">
 {movies&&movies.length!==0?movies&&movies.map((element,index)=>{
-    return  <Card style={{ width: "18rem" }} className={"cardFavs"}>
+    return  <Card style={{ width: "18rem" }} className={"cardFavs"} key={index}>
         <CloseButton onClick={()=>{closeBut(element)}}/>
     <Link to={`/${element.id}`}>
       <Card.Img
@@ -40,7 +40,7 @@ return <div className="favPageBody">
     </Link>
     
   </Card>
-}) :<h1>Favorit list is empty</h1>}
+}) :<h1 className="favMassage">Favorit list is empty</h1>}
 
 </div>
 

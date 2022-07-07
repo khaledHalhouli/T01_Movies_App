@@ -1,5 +1,6 @@
 import Pagination from "react-bootstrap/Pagination";
 import React, { useState, useEffect } from "react";
+import "./style.css"
 function PaginationPage({ pageNum, pagesNumber, setPageNum }) {
   let active = 1;
 

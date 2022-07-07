@@ -5,14 +5,25 @@
    gap: 20px;
    justify-content: center;
    align-items: center;
-   background-color: #141414
+   background-color: #141414;
+   min-height: 88vh;
 }
 .btn-close{
     align-self: end;
     color: white;
+    font-size: 20px;
     
 }
 .cardFavs{
     /* background-color: rgb(17, 17, 17); */
+
+}
+.favMassage{
+    color: white;
+}
+.navbar-light .navbar-toggler-icon{
+    background-color: white;
+}
+.offcanvas-body{
 
 }

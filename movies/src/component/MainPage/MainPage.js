@@ -16,9 +16,10 @@ const MainPage = () => {
     setIndex(selectedIndex);
   };
   useEffect(() => {
+    let numPage=Math.round(Math.random() * 3)
     axios
       .get(
-        "https://api.themoviedb.org/3/movie/top_rated?api_key=eb9e888f1f8bec115837636c39456418&language=en-US&page=1"
+        `https://api.themoviedb.org/3/movie/top_rated?api_key=eb9e888f1f8bec115837636c39456418&language=en-US&page=${numPage}`
       )
       .then((result) => {
         let start = Math.round(Math.random() * 17);
@@ -63,6 +64,8 @@ const MainPage = () => {
             </Link>
               <Carousel.Caption>
                 <h3 className="moveTitleSldier">{topRated[0].original_title}</h3>
+                <h3 className="moveTitleSldier">Rate:{topRated[0].vote_average}</h3>
+
                 
               </Carousel.Caption>
             </Carousel.Item>
@@ -79,6 +82,7 @@ const MainPage = () => {
 
               <Carousel.Caption>
                 <h3 className="moveTitleSldier">{topRated[1].original_title}</h3>
+                <h3 className="moveTitleSldier">Rate:{topRated[1].vote_average}</h3>
                 
               </Carousel.Caption>
             </Carousel.Item>
@@ -95,6 +99,8 @@ const MainPage = () => {
 
               <Carousel.Caption>
                 <h3 className="moveTitleSldier">{topRated[2].original_title}</h3>
+                <h3 className="moveTitleSldier">Rate:{topRated[2].vote_average}</h3>
+
                
               </Carousel.Caption>
             </Carousel.Item>

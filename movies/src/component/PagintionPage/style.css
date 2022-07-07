@@ -1,0 +1,26 @@
+.page-item.active .page-link{
+    background-color: rgb(63, 14, 64) ;
+    border-color: rgb(63, 14, 64);
+    color: white;
+    font-size: 1.5rem;
+font-weight: 700;
+
+}
+.pagination-lg .page-item:last-child .page-link{
+    font-size: 1.5rem;
+    
+font-weight: 700;
+color: black;
+}
+.page-item:not(:first-child) .page-link{
+    font-size: 1.5rem;
+    
+font-weight: 500;
+
+}
+.page-item:first-child .page-link{
+       font-size: 1.5rem;
+    
+font-weight: 700;
+color: black;
+}

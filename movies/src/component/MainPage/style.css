@@ -42,6 +42,7 @@ color: white;
     background-color: black;
 }
 .card{
+    margin: 2rem 0rem;
     box-shadow: -6px 20px 10px rgba(146, 130, 146, 0.774);
 
 }
